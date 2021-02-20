@@ -51,4 +51,20 @@ class UsersController < ApplicationController
       render plain: "User with id: #{id}, was deleted."
     end
   end
+
+  def login
+    email = params[:email]
+    user = User.find_by(email: email)
+
+    if user == nil
+      render plain: "No user with email: #{email} was found."
+    else
+      user_password = user.get_password
+      if user_password == params[:password]
+        render plain: "true"
+      else
+        render plain: "false"
+      end
+    end
+  end
 end

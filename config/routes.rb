@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   delete "todos/:id", to: "todos#destroy"
 
   resources :users
+  post "users/login", to: "users#login"
 end
