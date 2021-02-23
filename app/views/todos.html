@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo management app</title>
+  <link rel='stylesheet' type='text/css' href='reset.css'>
+  <link rel='stylesheet' type='text/css' href='todo-app.css'>
+
+</head>
+
+<body>
+  <main class='TodoPageMain'>
+
+    <h1 class='TodoPage-title'> My TODO List </h1>
+
+    <input type="text" class='AddTodo-Text' placeholder="What's next?">
+    <input type='date' class='AddTodo-Date'>
+    <input type="button" class='AddTodo-Button' value="Add">
+
+    <article>
+
+      <section class=' TodoSection'>
+        <div class='TodoHeader'>
+
+          <h2 class='TodoSection-title'>Due Today</h2>
+          <p class='Fraction_Complete'>0/2</p>
+
+        </div>
+        <ul>
+          <div class='Todo_Div'>
+            <input class='TodoItem-checkbox' type='checkbox'>
+            <li class='TodoSection-todo'>Submit SAAS project</li>
+
+            <a class="TodoItem-delete" href="javascript:void(0)">
+              <img src='trashcan.svg'>
+            </a>
+          </div>
+
+          <div class='Todo_Div'>
+            <input class='TodoItem-checkbox' type='checkbox'>
+            <li class='TodoSection-todo'>Call accountant</li>
+            <a class="TodoItem-delete" href="javascript:void(0)">
+              <img src='trashcan.svg'>
+            </a>
+          </div>
+
+        </ul>
+      </section>
+
+      <section class='TodoSection'>
+        <div class='TodoHeader'>
+
+          <h2 class='TodoSection-title'>Due Tomorrow</h2>
+          <p class='Fraction_Complete'>0/2</p>
+
+        </div>
+        <ul>
+          <div class='Todo_Div'>
+            <input class='TodoItem-checkbox' type='checkbox'>
+            <li class='TodoSection-todo'> Refill Groceries</li>
+            <a class="TodoItem-delete" href="javascript:void(0)">
+              <img src='trashcan.svg'>
+            </a>
+          </div>
+          <div class='Todo_Div'>
+            <input class='TodoItem-checkbox' type='checkbox'>
+            <li class='TodoSection-todo'> Eat Groceries</li>
+            <a class="TodoItem-delete" href="javascript:void(0)">
+              <img src='trashcan.svg'>
+            </a>
+          </div>
+        </ul>
+      </section>
+
+      <section class='TodoSection'>
+        <div class='TodoHeader'>
+          <h2 class='TodoSection-title'>Remaining</h2>
+          <p class='Fraction_Complete'>0/1</p>
+        </div>
+
+
+        <ul>
+          <div class='Todo_Div'>
+            <input class='TodoItem-checkbox' type='checkbox'>
+
+            <li class='TodoSection-todo'> Have a good nap</li>
+            <a class="TodoItem-delete" href="javascript:void(0)">
+              <img src='trashcan.svg'>
+            </a>
+          </div>
+        </ul>
+
+      </section>
+    </article>
+
+  </main>
+</body>
+
+</html>
