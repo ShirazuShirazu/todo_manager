@@ -11,7 +11,7 @@ body{
   font-weight: 600px;
   line-height: 1.8;
   margin-bottom: 30px;
-  margin-left: 30px;
+  margin-left: 60px;
 }
 
 .TodoSection-title{
@@ -54,19 +54,21 @@ h3{
 }
 
 .TodoHeader{
-  display:inline-flex;
+  display:flex;
 }
 
 .Fraction_Complete{
   line-height: 1.4;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-left: 20px;
 }
 
 ul{
   list-style-type: None;
+  line-height: 2.5;
+
 }
 
 .Todo_Div{
-  display: flex;
+  display: inline-flex;
 }
