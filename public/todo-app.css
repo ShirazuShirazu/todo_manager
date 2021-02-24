@@ -2,15 +2,13 @@ body{
   max-width: 500px;
   margin : auto;
   background-color: rgb(234, 234, 234);
-  padding-top: 50px;
-  margin-top: 10px;
-}
+  padding-top: 20px;
+  font-family: Trebuchet;}
 
 .TodoPage-title{
   font-size:  48px;
   font-weight: 600px;
   line-height: 1.8;
-  margin-bottom: 30px;
   margin-left: 60px;
 }
 
@@ -18,7 +16,6 @@ body{
   font-size: 30px;
   line-height: 1.4;
   margin-bottom: 10px;
-
 }
 
 .TodoPageMain{
@@ -50,6 +47,8 @@ h3{
   padding-top: 32px;
   padding-bottom: 32px;
   padding-right: 50px;
+  max-width: 350px;
+
 
 }
 
@@ -61,6 +60,7 @@ h3{
   line-height: 1.4;
   padding-top: 20px;
   padding-left: 20px;
+
 }
 
 ul{
