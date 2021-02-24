@@ -6,7 +6,7 @@ body{
   font-family: Trebuchet;
 }
 
-.TodoPage-title{
+.TodoPage-Title{
   font-size:  48px;
   font-weight: 600px;
   line-height: 1.8;
@@ -21,6 +21,11 @@ body{
 
 .TodoPageMain{
   display: inline;
+}
+
+.TodoPage-Inputs{
+  padding-left: 20px;
+  padding-bottom: 32px;
 }
 
 article{
@@ -42,13 +47,13 @@ h3{
 
 .TodoSection{
   margin-bottom: 32px;
-  margin-left: 32px;
+  margin-left: 40px;
   background-color:rgb(220, 220, 220);
   padding-left: 32px;
   padding-top: 32px;
   padding-bottom: 32px;
-  padding-right: 50px;
-  max-width: 800px;
+  padding-right: 10px;
+  max-width: 400px;
 
 
 }

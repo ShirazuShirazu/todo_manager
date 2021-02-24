@@ -8,27 +8,28 @@
     <title>Todo Management App</title>
   </head>
 
-  <body>
-    <h1> This is todos </h1>
-    <p> the date today is <%= DateTime.now.to_s(:long) %></p>
-    <h3> There are a total of <%= Todo.count %> todos in our database</h3>
     <main class='TodoPageMain'>
 
-        <h1 class='TodoPage-title'> My TODO List </h1>
-        <section>
-        <input type="text" class='AddTodo-Text' placeholder="What's next?">
-        <input type='date' class='AddTodo-Date'>
-        <input type="button" class='AddTodo-Button' value="Add">
-        </section>
+        <h1 class='TodoPage-Title'> My TODO List </h1>
 
-        <article>
+        <section class = 'TodoPage-Inputs'>
+
+        <form class ='AddTodo' action ='/todos' method = 'POST'>
+
+        <input type="text" class='AddTodo-Text'
+        placeholder="What's next?" name = 'todo_text'>
+        <input type='date' class='AddTodo-Date'
+        name = 'due_date'>
+        <input type= "submit" class='AddTodo-Button' value="Add">
+
+        </form></section>
+
         <%= render partial:"todo-section",
         locals:{
           section_title: "Overdue",
           todos: Todo.overdue,
           show_due_date: TRUE
         }%>
-        </article>
 
         <%= render partial: "todo-section",
           locals:{
