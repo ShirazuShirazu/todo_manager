@@ -1,10 +1,49 @@
-<h1> This is todos </h1>
-<p> the date today is <%= DateTime.now.to_s(:long) %></p>
-<h3> There are a total of <%= Todo.count %> todos in our database</h3>
+<!DOCTYPE html>
+<html lang="en">
 
-<% Todo.all.each do |todo|%>
-<div style = "display:flex;" align-items : center>
-<p style= "margin-right: 32px;"> <%= todo.todo_text  %></p>
-<p><%= todo.due_date %> </p>
-</div>
-<% end %>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Management App</title>
+  </head>
+
+  <body>
+    <h1> This is todos </h1>
+    <p> the date today is <%= DateTime.now.to_s(:long) %></p>
+    <h3> There are a total of <%= Todo.count %> todos in our database</h3>
+    <main class='TodoPageMain'>
+
+        <h1 class='TodoPage-title'> My TODO List </h1>
+        <section>
+        <input type="text" class='AddTodo-Text' placeholder="What's next?">
+        <input type='date' class='AddTodo-Date'>
+        <input type="button" class='AddTodo-Button' value="Add">
+        </section>
+
+        <article>
+        <%= render partial:"todo-section",
+        locals:{
+          section_title: "Overdue",
+          todos: Todo.overdue,
+          show_due_date: TRUE
+        }%>
+        </article>
+
+        <%= render partial: "todo-section",
+          locals:{
+          section_title: "Due today",
+          todos: Todo.due_today,
+          show_due_date: FALSE
+        } %>
+
+        <%= render partial: "todo-section",
+        locals:{
+          section_title: "Due Later",
+          todos: Todo.due_later,
+          show_due_date: TRUE
+        }%>
+
+      </main>
+  </body>
+</html>

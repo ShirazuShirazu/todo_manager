@@ -1,0 +1,31 @@
+<section class='TodoSection'>
+  <div class='TodoHeader'>
+  </head>
+    <h2 class='TodoSection-title'> <%= section_title %></h2>
+    <p class='Fraction_Complete'><%= todos.completed %>/<%=todos.count%></p>
+
+  </div>
+
+  <ul class= 'Todo_List'>
+    <% todos.all.each do |todo|%>
+
+      <% if (not todo.completed or not todo.overdue?) %>
+
+          <div class='Todo_Div'>
+        <input type="checkbox" name="completed" <%=todo.completed? ? "checked" : ""%>
+          class="MarkTodo" id="" onclick="this.form.submit()"/>
+
+          <li class='TodoItem-todo' style = "text-decoration: <%= todo.completed ? "line-through" : "none"%>" > <%= todo.todo_text %> </li>
+
+          <% if show_due_date%>
+            <p class='TodoItem-date'><%= todo.due_date.to_s(:short) %></p>
+          <% end %>
+
+          <a class="TodoItem-delete" href="javascript:void(0)">
+          <img src='trashcan.svg'>
+          </a>
+          </div>
+      <% end %>
+    <% end %>
+
+</section>

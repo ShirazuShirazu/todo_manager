@@ -3,7 +3,8 @@ body{
   margin : auto;
   background-color: rgb(234, 234, 234);
   padding-top: 20px;
-  font-family: Trebuchet;}
+  font-family: Trebuchet;
+}
 
 .TodoPage-title{
   font-size:  48px;
@@ -33,7 +34,7 @@ h3{
 
 }
 
-.TodoSection-todo{
+.TodoItem-todo{
   font-size: 20px;
   line-height: 1.4;
   /* margin-left: 32px; */
@@ -47,7 +48,7 @@ h3{
   padding-top: 32px;
   padding-bottom: 32px;
   padding-right: 50px;
-  max-width: 350px;
+  max-width: 800px;
 
 
 }
@@ -63,12 +64,24 @@ h3{
 
 }
 
-ul{
+.Todo_List{
   list-style-type: None;
   line-height: 2.5;
-
+  display:inline;
 }
 
 .Todo_Div{
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+}
+
+.TodoItem-delete{
+  margin-top: 10px;
+}
+
+.TodoItem-date{
+  font-size: 10px;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
 }
