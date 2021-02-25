@@ -40,6 +40,10 @@ class Todo < ActiveRecord::Base
     create!(todo_text: todo_hash[:todo_text], due_date: Date.today + todo_hash[:due_in_days], completed: false)
   end
 
+  def self.turnover
+    Todo.delete(Todo.where("due_date < ? and completed = ?", Date.today, TRUE).ids)
+  end
+
   def self.mark_as_complete!(todo_id)
     todo = find_by(id: todo_id)
     if (todo != nil)

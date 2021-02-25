@@ -14,7 +14,7 @@
 
         <section class = 'TodoPage-Inputs'>
 
-        <form class ='AddTodo' action ='/todos' method = 'POST'>
+      <%= form_with(url: "/todos/" , method: "post", class: "AddTodo") do %>
 
         <input type="text" class='AddTodo-Text'
         placeholder="What's next?" name = 'todo_text'>
@@ -22,7 +22,8 @@
         name = 'due_date'>
         <input type= "submit" class='AddTodo-Button' value="Add">
 
-        </form></section>
+        <% end %>
+        </section>
 
         <%= render partial:"todo-section",
         locals:{
@@ -44,6 +45,8 @@
           todos: Todo.due_later,
           show_due_date: TRUE
         }%>
+
+        <%Todo.turnover%>
 
       </main>
   </body>

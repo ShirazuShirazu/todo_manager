@@ -42,7 +42,8 @@ h3{
 .TodoItem-todo{
   font-size: 20px;
   line-height: 1.4;
-  /* margin-left: 32px; */
+  margin-right: 10px;
+
 }
 
 .TodoSection{
@@ -87,6 +88,5 @@ h3{
 .TodoItem-date{
   font-size: 10px;
   align-items: center;
-  margin-left: 10px;
   margin-right: 10px;
 }
