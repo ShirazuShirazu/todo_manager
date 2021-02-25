@@ -46,7 +46,7 @@ class TodosController < ApplicationController
       render plain: "No todo found with id: #{id}"
     else
       Todo.destroy(id)
-      render plain: "Todo with id: #{id}, was deleted."
+      redirect_to todos_path
     end
   end
 end
