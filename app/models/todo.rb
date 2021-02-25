@@ -1,4 +1,9 @@
 class Todo < ActiveRecord::Base
+  belongs_to :user
+
+  # table called 'users'
+  # todos table will contain 'user_id'
+
   def to_pleasant_string
     is_completed = completed ? "[X]" : "[ ]"
     return "#{id}) #{due_date.to_s(:short)} #{todo_text} #{is_completed}"
