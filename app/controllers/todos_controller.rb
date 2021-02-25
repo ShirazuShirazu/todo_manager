@@ -32,9 +32,9 @@ class TodosController < ApplicationController
     if todo == nil
       render plain: "No todo found with id: #{id}"
     else
-      todo.completed = true
+      todo.completed = (not todo.completed)
       todo.save
-      render plain: "Updated todo."
+      redirect_to todos_path
     end
   end
 
