@@ -1,0 +1,21 @@
+<h1>Welcome!</h1>
+<p>Creating your account is our #1 todo</p>
+<section class = 'SignUp_Section'>
+
+  <%= form_with url: users_path do |form| %>
+    <div class = "SignUp_div">
+      <%= form.text_field :name, class: 'SignUp_Input', placeholder: "Full Name" %>
+    </div>
+
+   <div class = "SignUp_div">
+      <%= form.email_field :email, class:'SignUp_Input', placeholder: "Email"%>
+    </div>
+
+   <div class = "SignUp_div">
+      <%= form.password_field :password, class:'SignUp_Input', placeholder: "Password"%>
+    </div>
+
+    <%= form.submit value: "Sign-Up!", class: "SignUp_SubmitButton" %>
+
+  <% end %>
+</section>

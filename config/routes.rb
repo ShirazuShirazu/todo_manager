@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/", to: "home#welcome"
+
   get "todos", to: "todos#index"
   get "todos/:id", to: "todos#show"
   post "todos", to: "todos#create"
@@ -7,5 +8,6 @@ Rails.application.routes.draw do
   delete "todos/:id", to: "todos#destroy"
 
   resources :users
-  post "users/login", to: "users#login"
+
+  get "/signin" => "sessions#new"
 end

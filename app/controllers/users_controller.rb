@@ -20,8 +20,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create!(name: params[:name], email: params[:email], password: params[:password])
-    render plain: "User added!"
+    User.create!(name: params[:name],
+                 email: params[:email],
+                 password_digest: (params[:password]))
+    redirect_to "/"
   end
 
   def update
@@ -66,5 +68,9 @@ class UsersController < ApplicationController
         render plain: "false"
       end
     end
+  end
+
+  def new
+    render "users/new"
   end
 end
