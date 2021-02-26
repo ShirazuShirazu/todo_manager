@@ -1,8 +1,11 @@
 # todos_controller.rb
 class TodosController < ApplicationController
+  skip_before_action :ensure_user_logged_in
+
   def index
     # render plain: Todo.all.order(:due_date).to_a.map { |todo| todo.to_pleasant_string }.
     #          join("\n")
+    @current_user_name = current_user.name
     render "index"
   end
 

@@ -1,6 +1,8 @@
 # Generated using rails generate controller Users
 
 class UsersController < ApplicationController
+  skip_before_action :ensure_user_logged_in
+
   def index
     render plain: User.all.order(:id).to_a.map { |user| user.to_pleasant_string }.
              join("\n")
@@ -49,22 +51,6 @@ class UsersController < ApplicationController
     else
       User.destroy(id)
       render plain: "User with id: #{id}, was deleted."
-    end
-  end
-
-  def login
-    email = params[:email]
-    user = User.find_by(email: email)
-
-    if user == nil
-      render plain: "No user with email: #{email} was found."
-    else
-      user_password = user.get_password
-      if user_password == params[:password]
-        render plain: "true"
-      else
-        render plain: "false"
-      end
     end
   end
 

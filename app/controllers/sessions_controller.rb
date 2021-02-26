@@ -1,13 +1,16 @@
 class SessionsController < ApplicationController
+  skip_before_action :ensure_user_logged_in
+
   def new
     # Here it renders new.html.erb on its own. rails is pretty cool that way.
   end
 
   def create
-    # checks if user exists
+    # checks if user exists and log them in.
     user = User.find_by(email: params[:email])
     if user && user.password_digest == params[:password]
-      render plain: "You are logged in"
+      session[:current_user_id] = user.id
+      redirect_to "/"
     else
       render plain: "Incorrect email or password"
     end
