@@ -1,0 +1,17 @@
+<h1>Welcome back!</h1>
+<p>Sign in to your account<p>
+<section class = 'SignUp_Section'>
+
+  <%= form_with url: signin_path do |form| %>
+   <div class = "SignUp_div">
+      <%= form.email_field :email, class:'SignUp_Input', placeholder: "Email"%>
+    </div>
+
+   <div class = "SignUp_div">
+      <%= form.password_field :password, class:'SignUp_Input', placeholder: "Password"%>
+    </div>
+
+    <%= form.submit value: "Sign in", class: "SignUp_SubmitButton" %>
+
+  <% end %>
+</section>

@@ -1,8 +1,6 @@
 # Generated using rails generate controller Users
 
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def index
     render plain: User.all.order(:id).to_a.map { |user| user.to_pleasant_string }.
              join("\n")
@@ -22,7 +20,7 @@ class UsersController < ApplicationController
   def create
     User.create!(name: params[:name],
                  email: params[:email],
-                 password_digest: (params[:password]))
+                 password_digest: params[:password])
     redirect_to "/"
   end
 
