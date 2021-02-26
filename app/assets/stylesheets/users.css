@@ -1,10 +1,11 @@
 body{
   margin:auto;
   align-items: center;
+
 }
 
 .SignUp_Section{
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 30px;
   /* display: flex; */
 }

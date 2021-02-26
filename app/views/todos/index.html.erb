@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Management App</title>
   </head>
-
     <main class='TodoPageMain'>
 
-        <h1 class='TodoPage-Title'><%= @current_user_name %>'s TODO List </h1>
+        <div style = "display:flex">
+        <h1 class='TodoPage-Title'><%= @current_user_name.capitalize %>'s TODO List </h1>
 
+        <%= link_to "Sign Out", "/signout", method: "delete"%>
+        </div>
         <section class = 'TodoPage-Inputs'>
 
       <%= form_with(url: "/todos/" , method: "post", class: "AddTodo") do %>
@@ -28,25 +30,23 @@
         <%= render partial:"todo-section",
         locals:{
           section_title: "Overdue",
-          todos: Todo.overdue,
+          todos: @todos.overdue,
           show_due_date: TRUE
         }%>
 
         <%= render partial: "todo-section",
           locals:{
           section_title: "Due today",
-          todos: Todo.due_today,
+          todos: @todos.due_today,
           show_due_date: FALSE
         } %>
 
         <%= render partial: "todo-section",
         locals:{
           section_title: "Due Later",
-          todos: Todo.due_later,
+          todos: @todos.due_later,
           show_due_date: TRUE
         }%>
-
-        <%Todo.turnover%>
 
       </main>
   </body>

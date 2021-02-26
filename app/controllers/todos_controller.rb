@@ -3,8 +3,7 @@ class TodosController < ApplicationController
   skip_before_action :ensure_user_logged_in
 
   def index
-    # render plain: Todo.all.order(:due_date).to_a.map { |todo| todo.to_pleasant_string }.
-    #          join("\n")
+    @todos = current_user.todos
     @current_user_name = current_user.name
     render "index"
   end
@@ -22,7 +21,10 @@ class TodosController < ApplicationController
   end
 
   def create
-    Todo.create!(todo_text: params[:todo_text], due_date: params[:due_date], completed: false, id: params[:id])
+    Todo.create!(todo_text: params[:todo_text],
+                 due_date: params[:due_date],
+                 completed: false,
+                 user_id: session[:current_user_id])
     redirect_to todos_path
   end
 
