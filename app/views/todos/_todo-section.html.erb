@@ -22,7 +22,7 @@
           <% end %>
 
           <li class='TodoItem-todo'
-          style = "text-decoration: <%= todo.completed ? "line-through" : "none"%>" > <%= todo.todo_text %> </li>
+          style = "text-decoration: <%= todo.completed ? "line-through" : "none"%>" > <%= todo.todo_text.capitalize %> </li>
 
           <% if show_due_date%>
             <p class='TodoItem-date'><%= todo.due_date.to_s(:short) %></p>

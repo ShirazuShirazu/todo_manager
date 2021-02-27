@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
       session[:current_user_id] = user.id
       redirect_to "/"
     else
-      render plain: "Incorrect email or password"
+      flash[:error] = "Your login attempt was invalid. Please retry"
+      redirect_to "/signin"
     end
   end
 

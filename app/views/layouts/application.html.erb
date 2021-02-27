@@ -11,6 +11,12 @@
   </head>
 
   <body>
+
+    <% if flash[:error] %>
+      <p class = 'Flash_Error'>
+        <%= flash[:error] %>
+      </p>
+    <% end %>
     <%= yield %>
 
     <hr>
