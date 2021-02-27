@@ -10,10 +10,15 @@
     <main class='TodoPageMain'>
 
         <div style = "display:flex">
-        <h1 class='TodoPage-Title'><%= @current_user_name.capitalize %>'s TODO List </h1>
-
-        <%= link_to "Sign Out", "/signout", method: "delete"%>
+          <h1 class='TodoPage-Title'>
+            <%= @current_user_name.capitalize %>'s TODO List
+          </h1>
+          <p style = 'margin-left:50px'>
+            <%= link_to "Sign Out", "/signout", method: "delete"%>
+          </p>
         </div>
+
+
         <section class = 'TodoPage-Inputs'>
 
       <%= form_with(url: "/todos/" , method: "post", class: "AddTodo") do %>

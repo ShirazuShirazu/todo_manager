@@ -57,6 +57,7 @@ h3{
   padding-bottom: 32px;
   padding-right: 10px;
   max-width: 400px;
+border-width: 100px;
 
 
 }
@@ -74,7 +75,7 @@ h3{
 
 .Todo_List{
   list-style-type: None;
-  line-height: 2.5;
+  line-height: 1.5;
   display:inline;
 }
 
